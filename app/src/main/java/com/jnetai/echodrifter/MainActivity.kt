@@ -146,13 +146,14 @@ class MainActivity : AppCompatActivity() {
             textSize = 15f
             minimumHeight = 96
             setPadding(32, 16, 32, 16)
+            val btn = this
             setOnClickListener {
-                it.isEnabled = false
-                text = "Checking..."
+                btn.isEnabled = false
+                btn.text = "Checking..."
                 checkForUpdate { result ->
                     runOnUiThread {
-                        it.text = result
-                        it.isEnabled = true
+                        btn.text = result
+                        btn.isEnabled = true
                     }
                 }
             }
